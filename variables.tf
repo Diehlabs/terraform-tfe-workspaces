@@ -24,7 +24,7 @@ variable "description" {
 }
 
 #
-#  Not using this for now, will need to be provided inside the workspace_name_suffixes var 
+#  Not using this for now, will need to be provided inside the workspace_name_suffixes var
 #   which will change the module logic.
 #
 # variable "tag_names" {

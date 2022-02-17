@@ -3,7 +3,7 @@ locals {
   all_remote_consumers = flatten([for name, remotes in var.workspace_name_suffixes : remotes])
 
   # Turn all_remote_consumers in to a map so that lookups are indexed by ws name, instead
-  # of an integer for ability to reference lookups by name i.e. 
+  # of an integer for ability to reference lookups by name i.e.
   # data.tfe_workspace.remote_consumer["my-ws-name"].id
   map_remote_consumer_names = {
     for name in local.all_remote_consumers :
