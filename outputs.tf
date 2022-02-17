@@ -1,5 +1,5 @@
 output "workspaces" {
-  description = "All workspaces created by this module"
+  description = "Map containing the namess and ids of all workspaces created by this module"
   value = {
     for workspace in resource.tfe_workspace.ws : workspace.name => workspace.id
   }

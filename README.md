@@ -31,19 +31,19 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_description"></a> [description](#input\_description) | n/a | `string` | n/a | yes |
-| <a name="input_execution_mode"></a> [execution\_mode](#input\_execution\_mode) | n/a | `string` | `"local"` | no |
-| <a name="input_global_remote_state"></a> [global\_remote\_state](#input\_global\_remote\_state) | n/a | `bool` | `false` | no |
-| <a name="input_managed_by"></a> [managed\_by](#input\_managed\_by) | n/a | `string` | n/a | yes |
-| <a name="input_remote_state_workspaces"></a> [remote\_state\_workspaces](#input\_remote\_state\_workspaces) | n/a | `list(string)` | `[]` | no |
-| <a name="input_tf_org_name"></a> [tf\_org\_name](#input\_tf\_org\_name) | n/a | `string` | n/a | yes |
-| <a name="input_tf_version"></a> [tf\_version](#input\_tf\_version) | n/a | `string` | `"1.1.5"` | no |
-| <a name="input_workspace_name_prefix"></a> [workspace\_name\_prefix](#input\_workspace\_name\_prefix) | Prefix for workspace names, usually a repo or other name common to all workspaces. | `any` | n/a | yes |
-| <a name="input_workspace_name_suffixes"></a> [workspace\_name\_suffixes](#input\_workspace\_name\_suffixes) | n/a | `any` | n/a | yes |
+| <a name="input_description"></a> [description](#input\_description) | The description of the workpaces | `string` | n/a | yes |
+| <a name="input_execution_mode"></a> [execution\_mode](#input\_execution\_mode) | Local or remote exection mode | `string` | `"local"` | no |
+| <a name="input_global_remote_state"></a> [global\_remote\_state](#input\_global\_remote\_state) | Allow any workspace to access the state of these workspaces | `bool` | `false` | no |
+| <a name="input_managed_by"></a> [managed\_by](#input\_managed\_by) | The name of the repo managing this configuration | `string` | n/a | yes |
+| <a name="input_tf_org_name"></a> [tf\_org\_name](#input\_tf\_org\_name) | The TFE/TFC org name | `string` | n/a | yes |
+| <a name="input_tf_version"></a> [tf\_version](#input\_tf\_version) | The Terraform version that these workspaces should use | `string` | `"1.1.5"` | no |
+| <a name="input_working_directory"></a> [working\_directory](#input\_working\_directory) | Directory to  run Terraform from | `string` | `"/"` | no |
+| <a name="input_workspace_name_prefix"></a> [workspace\_name\_prefix](#input\_workspace\_name\_prefix) | Prefix for workspace names, usually a repo or other name common to all workspaces. | `string` | n/a | yes |
+| <a name="input_workspaces"></a> [workspaces](#input\_workspaces) | Suffix portion of managed workspace names and workspaces to be granted access to remote state on each managed workspace. See examples for more detail. | `map(any)` | n/a | yes |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_workspaces"></a> [workspaces](#output\_workspaces) | All workspaces created by this module |
+| <a name="output_workspaces"></a> [workspaces](#output\_workspaces) | Map containing the namess and ids of all workspaces created by this module |
 <!-- END_TF_DOCS -->

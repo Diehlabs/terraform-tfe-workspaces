@@ -1,6 +1,6 @@
 locals {
   # Combined list of all remote state consumers for data lookup, empty lists are removed.
-  all_remote_consumers = flatten([for name, remotes in var.workspace_name_suffixes : remotes])
+  all_remote_consumers = flatten([for name, remotes in var.workspaces : remotes])
 
   # Turn all_remote_consumers in to a map so that lookups are indexed by ws name, instead
   # of an integer for ability to reference lookups by name i.e.
@@ -13,7 +13,7 @@ locals {
 }
 
 resource "tfe_workspace" "ws" {
-  for_each     = var.workspace_name_suffixes
+  for_each     = var.workspaces
   name         = each.key
   description  = "${var.description} - Managed by Terraform repo ${var.managed_by}"
   organization = var.tf_org_name
