@@ -2,7 +2,7 @@ variable "workspace_name_prefix" {
   description = "Prefix for workspace names, usually a repo or other name common to all workspaces."
 }
 
-variable "environments" {
+variable "workspace_name_suffixes" {
   #   type = map(any)
   # type = list(map({
   #     name = string
@@ -24,7 +24,7 @@ variable "description" {
 }
 
 #
-#  Not using this for now, will need to be provided inside the environments var 
+#  Not using this for now, will need to be provided inside the workspace_name_suffixes var 
 #   which will change the module logic.
 #
 # variable "tag_names" {
