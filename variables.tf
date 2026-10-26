@@ -1,15 +1,6 @@
-variable "workspace_name_prefix" {
-  description = "Prefix for workspace names, usually a repo or other name common to all workspaces."
-  type        = string
-}
-
 variable "workspaces" {
   description = "Suffix portion of managed workspace names and workspaces to be granted access to remote state on each managed workspace. See examples for more detail."
-  # type = map(object({
-  #   suffix                    = string
-  #   remote_state_workspaces = list(string)
-  # }))
-  type = map(any)
+  type        = map(list(string))
 }
 
 variable "managed_by" {
@@ -38,21 +29,17 @@ variable "description" {
 
 variable "tf_version" {
   description = "The Terraform version that these workspaces should use"
+  type        = string
   default     = "1.1.5"
 }
 
 variable "global_remote_state" {
   description = "Allow any workspace to access the state of these workspaces"
+  type        = bool
   default     = false
 }
 
 variable "tf_org_name" {
   description = "The TFE/TFC org name"
   type        = string
-}
-
-variable "working_directory" {
-  description = "Directory to  run Terraform from"
-  type        = string
-  default     = "/"
 }
